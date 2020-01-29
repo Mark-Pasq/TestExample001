@@ -15,6 +15,7 @@ def count_words(all_lines):
                 word_count[clean_word] = 1
     return word_count
 
+
 def main():
     path = 'warpeace.txt'
     file = open(str(path))
