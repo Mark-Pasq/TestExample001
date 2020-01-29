@@ -1,5 +1,7 @@
 def count_words(allLines):
     word_count = dict()
+    if not (type(allLines) is list):
+        return word_count
     for line in allLines:
         messy_words = line.split(" ")
         for messy_word in messy_words:
