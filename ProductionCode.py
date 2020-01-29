@@ -1,14 +1,16 @@
-def count_words(allLines):
+
+
+def count_words(all_lines):
     word_count = dict()
-    if not (type(allLines) is list):
+    if not (type(all_lines) is list):
         return word_count
-    for line in allLines:
+    for line in all_lines:
         messy_words = line.split(" ")
         for messy_word in messy_words:
             cleaner_word = messy_word.rstrip("""!@#$%^&*()-={}[]"';:,./?\n""")
             clean_word = cleaner_word.lstrip("""!@#$%^&*()-={}[]"';:,./?\n""")
             if clean_word in word_count:
-                word_count[clean_word]+=1
+                word_count[clean_word] += 1
             else:
                 word_count[clean_word] = 1
     return word_count
@@ -20,6 +22,7 @@ def main():
     results = count_words(all_lines)
     for word in results:
         print(f"{word} appears {results[word]} times")
+
 
 if __name__ == '__main__':
     main()
